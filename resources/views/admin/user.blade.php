@@ -3,7 +3,7 @@
 <main class="pt-2 mx-lg-5">
       <div class="container-fluid mt-5 pt-5">
     <section class="container">
-        
+
     <div class="card mt-4 px-5 py-3" style="box-shadow:none;">
         <div class="row py-5">
             <div class="col-md-5" >
@@ -15,39 +15,39 @@
             </div>
             <div class="col-md-7" style="border-left:1px solid #000;">
                 <h3 class="pb-2 h3 h3-responsive">Documents :</h3>
-                
+
                 <div class="col-md-12  p-2 mb-1" style="border:1px solid #dee2e6">
-                    
-                        <a href="{{route('admin.files',[$user->id,'x'])}}">
+
+                        <a href="{{route('admin.files',[$user->id,'download-forms'])}}">
                             <div class="row">
                                 <div class="col-md-2">
                                      <img src="{{url('svg/folder.png')}}" class="img img-fluid" >
                                 </div>
                                 <div class="col-md-7">
-                                    <p class=" pt-2 black-text">Input</p>
+                                    <p class=" pt-2 black-text">Download Forms</p>
                                 </div>
                             </div>
                         </a>
-                    
+
                 </div>
-                
+
                 <div class="col-md-12  p-2 mb-1" style="border:1px solid #dee2e6">
-                    
-                        <a href="{{route('admin.files',[$user->id,'y'])}}">
+
+                        <a href="{{route('admin.get.upload',[$user->id,'upload-forms'])}}">
                             <div class="row">
                                 <div class="col-md-2">
                                      <img src="{{url('svg/folder.png')}}" class="img img-fluid" >
                                 </div>
                                 <div class="col-md-7">
-                                    <p class=" pt-2 black-text">Output</p>
+                                    <p class=" pt-2 black-text">Upload Forms</p>
                                 </div>
                             </div>
                         </a>
-                    
+
                 </div>
-                
+
                  <div class="col-md-12  p-2 mb-1" style="border:1px solid #dee2e6">
-                   
+
                         <a href="{{route('admin.files',[$user->id,'z'])}}">
                              <div class="row">
                                 <div class="col-md-2">
@@ -58,11 +58,11 @@
                                 </div>
                             </div>
                         </a>
-                    
+
                 </div>
-                
+
                 <div class="col-md-12  p-2 mb-1" style="border:1px solid #dee2e6">
-                   
+
                         <a href="{{route('admin.files',[$user->id,'o'])}}">
                              <div class="row">
                                 <div class="col-md-2">
@@ -73,16 +73,16 @@
                                 </div>
                             </div>
                         </a>
-                    
+
                 </div>
-       
+
             </div>
         </div>
-       
-        
-        
+
+
+
     </div>
-       
+
     </section>
         </div>
 

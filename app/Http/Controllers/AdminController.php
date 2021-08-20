@@ -1,5 +1,5 @@
 <?php
- 
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -20,9 +20,10 @@ class AdminController extends Controller
         $user=User::where('id',$id)->first();
         return view('admin.user',compact('user'));
     }
-    public function files($id,$loc){
+    public function files($id, $loc){
         $user=User::where('id',$id)->first();
-        $docs=Document::where('user_id',$id)->where('location',$loc)->get();
+        //  $docs=Document::where('user_id',$id)->where('location',$loc)->get();
+         $docs=Document::where('user_id',$id)->get();
         return view('admin.files',compact('docs','user','loc'));
     }
     public function getUpload($id,$loc){
@@ -38,9 +39,13 @@ class AdminController extends Controller
         if($loc=="o"){
             return view('admin.locationo',compact('id','loc'));
         }
-        
+        if($loc=="upload-forms"){
+            $user = User::find($id);
+            return view('admin.document-upload',compact('user','loc'));
+        }
+
     }
-    
+
     public function uploadDoc(Request $request){
         $doc=new Document();
         $doc->user_id=$request->user_id;
@@ -55,7 +60,7 @@ class AdminController extends Controller
             if ($upload->move('uploads/documents/', $fileformat)) {
                 $doc->document = $fileformat;
             }
-            
+
         }
         if($doc->save()){
             return redirect()->back()->with('success','Document Uploaded and saved.');
@@ -63,7 +68,7 @@ class AdminController extends Controller
         else{
             return redirect()->back()->with('unsuccess','Failed try again.');
         }
-        
+
     }
     public function delete($id){
 
@@ -87,7 +92,7 @@ class AdminController extends Controller
     public function showDoc(){
         $docs=Document::latest()->get();
                return view('admin.docindex',compact('docs'));
- 
+
     }
-    
+
 }
