@@ -21,29 +21,29 @@
                     <!-- Card -->
                     <!-- Card -->
             <!--    </div>-->
-                
+
             <!--</div>-->
             <div class="row px-5 py-4">
                 <div class="col-md-3" >
-                    <a href="{{route('location-file','x')}}" class="black-text">
+                    <a href="{{route('location-file','download-forms')}}" class="black-text">
                     <div class=" ">
                       <!-- Card content -->
-                     
+
                           <div class="card-body text-center" style="border:1px solid #dee2e6;    border-radius: 0.2rem;">
                                                      <img src="{{url('svg/folder.png')}}" class="img img-fluid" style="width:60%">
 
-                    
+
                         <!-- Title -->
-                        <h5 class="h5 h5-responsive pt-3">Input</h5>
+                        <h5 class="h5 h5-responsive pt-3">Download Forms</h5>
                         <!-- Text -->
-                       
-                    
+
+
                       </div>
-                    </div> 
+                    </div>
                     </a>
                 </div>
                 <div class="col-md-3" >
-                     <a href="{{route('location-file','y')}}" class="black-text">
+                     <a href="{{route('location')}}" class="black-text">
                     <div class=" ">
                       <!-- Card content -->
                       <div class="card-body text-center" style="border:1px solid #dee2e6;    border-radius: 0.2rem;">
@@ -51,16 +51,16 @@
 
                         <!-- Title -->
                         <h5 class="h5 h5-responsive pt-3">
-                           Output</h5>
+                            Upload Forms</h5>
                         <!-- Text -->
-                       
-                    
+
+
                       </div>
-                    
+
                     </div>
                     </a>
                 </div>
-                
+
                 <div class="col-md-3" >
 <a href="{{route('location-file','z')}}" class="black-text">
                      <div class=" ">
@@ -71,14 +71,14 @@
                         <!-- Title -->
                         <h5 class="h5 h5-responsive pt-3">Correspondence</h5>
                         <!-- Text -->
-                       
-                    
+
+
                       </div>
-                    
+
                     </div>
                     </a>
             </div>
-            
+
             <div class="col-md-3" >
 <a href="{{route('location-file','o')}}" class="black-text">
                      <div class=" ">
@@ -89,20 +89,20 @@
                         <!-- Title -->
                         <h5 class="h5 h5-responsive pt-3">Others</h5>
                         <!-- Text -->
-                       
-                    
+
+
                       </div>
-                    
+
                     </div>
                     </a>
             </div>
-            
+
             </div>
-            
-        
-          
-            
-        
+
+
+
+
+
     </div>
     </div>
 </main>

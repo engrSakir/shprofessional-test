@@ -55,7 +55,7 @@ class HomeController extends Controller
     }
      public function filesByLocation($type)
     {
-        $docs=Document::where('location',$type)->where('user_id',Auth::user()->id)->get();
+        $docs = Document::where('user_id', Auth::user()->id)->get();
         return view('location-file',compact('docs','type'));
     }
 
@@ -71,7 +71,7 @@ class HomeController extends Controller
             if ($upload->move('uploads/users/', $fileformat)) {
                 $user->profile_image = $fileformat;
             }
-            
+
         }
 
         if($user->update()){
@@ -95,7 +95,7 @@ class HomeController extends Controller
             if ($upload->move('uploads/documents/', $fileformat)) {
                 $doc->document = $fileformat;
             }
-            
+
         }
         if($doc->save()){
             return redirect()->back()->with('success','Document Uploaded and saved.');
@@ -103,14 +103,14 @@ class HomeController extends Controller
         else{
             return redirect()->back()->with('unsuccess','Failed try again.');
         }
-        
+
     }
-    
+
     public function Down($file){
         return  response()->download(public_path('uploads/documents/'.$file));
     }
     public function Notes(){
         $notes=Note::where('user_id',Auth::user()->id)->get();
         return view('notes',compact('notes'));
-    } 
+    }
 }
