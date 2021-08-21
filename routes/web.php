@@ -11,18 +11,13 @@
 |
 */
 
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    try {
-        DB::table('users')->where('email', 'user@gmail.com')->update(['password' => bcrypt('password')]);
-        DB::table('admins')->where('email', 'admin@gmail.com')->update(['password' => bcrypt('password')]);
-    } catch (Exception $e) {
-        dd($e);
-    }
     return view('welcome');
 });
 
