@@ -143,7 +143,7 @@
             <a href="{{url('home')}}" class="list-group-item active waves-effect">
                 <i class="fas fa-chart-pie mr-3"></i>Dashboard
             </a>
-            <a href="#" type="button" id="dropdown" data-toggle="dropdown"
+            /* <a href="#" type="button" id="dropdown" data-toggle="dropdown"
                class="  dropdown-toggle multi-level-dropdown list-group-item  list-group-item-action"
                aria-haspopup="true"
                aria-expanded="false" style="border-radius:5px;"><i class="fa fa-link"></i>&ensp;Links</a>
@@ -160,7 +160,7 @@
                 <li class="dropdown-item p-0">
                     <a href="{{url('locationo')}}" class="dropdown-item w-100">Others </a>
                 </li>
-            </ul>
+            </ul> */
             <a href="{{url('files')}}" class=" list-group-item  waves-effect">
                 <i class="fa fa-folder" aria-hidden="true"></i>&ensp;
                 Files
@@ -169,10 +169,10 @@
                 <i class="fa fa-file" aria-hidden="true"></i>&ensp;
                 General Notes
             </a>
-            <a href="{{route('apiKey')}}" class=" list-group-item  waves-effect">
+            /* <a href="{{route('apiKey')}}" class=" list-group-item  waves-effect">
                 <i class="fa fa-file" aria-hidden="true"></i>&ensp;
                 API Key
-            </a>
+            </a> */
 
             <!-- Basic dropdown -->
 
