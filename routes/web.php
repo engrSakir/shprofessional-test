@@ -18,6 +18,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+    // $user = new User();
+    // $user->name = 'User Name';
+    // $user->email = 'user@gmail.com';
+    // $user->password = bcrypt('password');
+    // $user->save();
     return view('welcome');
 });
 
@@ -42,6 +47,7 @@ Route::get('/notes/edit/{id}', 'NotesController@edit')->name('notes.edit');
 Route::post('/notes/post-edit/{id}', 'NotesController@update')->name('notes.update');
 
 Route::get('/location-file/{type}', 'HomeController@filesByLocation')->name('location-file');
+Route::post('/send-message', 'HomeController@sendMessage')->name('sendMessage');
 Route::get('/profile', 'HomeController@profile')->name('profile');
 Route::post('/profile-update', 'HomeController@update')->name('pro.update');
 Route::post('/document-upload', 'HomeController@uploadDoc')->name('doc.upload');

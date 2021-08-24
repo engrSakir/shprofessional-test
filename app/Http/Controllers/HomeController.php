@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Auth;
 use App\Document;
+use App\Message;
 use App\Note;
 class HomeController extends Controller
 {
@@ -55,8 +56,14 @@ class HomeController extends Controller
     }
      public function filesByLocation($type)
     {
-        $docs = Document::where('user_id', Auth::user()->id)->get();
-        return view('location-file',compact('docs','type'));
+        if($type == 'location-file'){
+            $docs = Document::where('user_id', Auth::user()->id)->get();
+            return view('location-file',compact('docs','type'));
+        }else if($type == 'message'){
+            $messages = Message::where('user_id', Auth::user()->id)->orderBy('created_at', 'asc')->get();
+            return view('message',compact('messages','type'));
+        }
+
     }
 
     public function update(Request $request){
@@ -109,8 +116,22 @@ class HomeController extends Controller
     public function Down($file){
         return  response()->download(public_path('uploads/documents/'.$file));
     }
+
     public function Notes(){
         $notes=Note::where('user_id',Auth::user()->id)->get();
         return view('notes',compact('notes'));
+    }
+
+    public function sendMessage(Request $request){
+        $request->validate([
+            'message' => 'required'
+        ]);
+
+        $message = new Message();
+        $message->message_type = 'user';
+        $message->user_id = Auth::user()->id;
+        $message->message = $request->message;
+        $message->save();
+        return back();
     }
 }
