@@ -61,6 +61,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('super-admin', 'AdminUserController');
     Route::get('files/{id}/{loc}', 'AdminController@files')->name('admin.files');
     Route::get('upload-file/{id}/{loc}', 'AdminController@getUpload')->name('admin.get.upload');
+    Route::post('/send-message/{user_id}', 'AdminController@sendMessage')->name('admin.sendMessage');
     Route::post('/document-upload', 'AdminController@uploadDoc')->name('admin.doc.upload');
     Route::get('/document-delete/{id}', 'AdminController@delete')->name('admin.doc.del');
 

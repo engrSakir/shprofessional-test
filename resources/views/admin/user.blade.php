@@ -48,7 +48,7 @@
 
                  <div class="col-md-12  p-2 mb-1" style="border:1px solid #dee2e6">
 
-                        <a href="{{route('admin.files',[$user->id,'z'])}}">
+                        <a href="{{route('admin.get.upload',[$user->id,'message'])}}">
                              <div class="row">
                                 <div class="col-md-2">
                                      <img src="{{url('svg/folder.png')}}" class="img img-fluid" >
