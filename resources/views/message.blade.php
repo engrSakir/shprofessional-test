@@ -10,9 +10,6 @@
         }
 
     </style>
-
-
-
     <main class="pt-2 mx-lg-5">
         <div class="container-fluid mt-5 pt-5">
             <div class=" card p-4 text-font" style="box-shadow:none;">

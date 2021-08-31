@@ -25,7 +25,7 @@
             <!--</div>-->
             <div class="row px-5 py-4">
                 <div class="col-md-3" >
-                    <a href="{{route('location-file','download-forms')}}" class="black-text">
+                    <a href="{{route('downloadForms')}}" class="black-text">
                     <div class=" ">
                       <!-- Card content -->
 
@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="col-md-3" >
-<a href="{{route('location-file','message')}}" class="black-text">
+<a href="{{route('sendMessage')}}" class="black-text">
                      <div class=" ">
                       <!-- Card content -->
                       <div class="card-body text-center" style="border:1px solid #dee2e6;    border-radius: 0.2rem;">
@@ -80,7 +80,7 @@
             </div>
 
             <div class="col-md-3" >
-<a href="{{route('location-file','o')}}" class="black-text">
+<a href="#" class="black-text">
                      <div class=" ">
                       <!-- Card content -->
                       <div class="card-body text-center" style="border:1px solid #dee2e6;    border-radius: 0.2rem;">

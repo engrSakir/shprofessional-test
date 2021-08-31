@@ -54,15 +54,16 @@ class HomeController extends Controller
     {
         return view('files');
     }
-     public function filesByLocation($type)
+     public function downloadForms()
     {
-        if($type == 'location-file'){
-            $docs = Document::where('user_id', Auth::user()->id)->get();
-            return view('location-file',compact('docs','type'));
-        }else if($type == 'message'){
-            $messages = Message::where('user_id', Auth::user()->id)->orderBy('created_at', 'asc')->get();
-            return view('message',compact('messages','type'));
-        }
+        $docs = Document::where('user_id', Auth::user()->id)->get();
+        return view('download-forms',compact('docs'));
+    }
+
+    public function getSendMessage()
+    {
+        $messages = Message::where('user_id', Auth::user()->id)->orderBy('created_at', 'asc')->get();
+        return view('message',compact('messages'));
 
     }
 

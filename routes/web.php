@@ -46,8 +46,9 @@ Route::post('/notes/post-create', 'NotesController@store')->name('notes.store');
 Route::get('/notes/edit/{id}', 'NotesController@edit')->name('notes.edit');
 Route::post('/notes/post-edit/{id}', 'NotesController@update')->name('notes.update');
 
-Route::get('/location-file/{type}', 'HomeController@filesByLocation')->name('location-file');
-Route::post('/send-message', 'HomeController@sendMessage')->name('sendMessage');
+Route::get('/download-forms', 'HomeController@downloadForms')->name('downloadForms');
+Route::get('/message', 'HomeController@getSendMessage')->name('sendMessage');
+Route::post('/message', 'HomeController@sendMessage');
 Route::get('/profile', 'HomeController@profile')->name('profile');
 Route::post('/profile-update', 'HomeController@update')->name('pro.update');
 Route::post('/document-upload', 'HomeController@uploadDoc')->name('doc.upload');
