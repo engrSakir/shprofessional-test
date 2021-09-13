@@ -25,6 +25,8 @@
                         <th>Title</th>
                         <th>Note</th>
                         <th>Type</th>
+                        <th>Uploaded Date</th>
+
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -36,6 +38,11 @@
                           <td>{{$row->title}}</td>
                           <td>{{$row->note}}</td>
                           <td>{{$row->type}}</td>
+                          <td>
+                            {{ $row->created_at->format('d/m/Y') }}<br>
+                            {{ $row->created_at->format('h:i A') }}
+                          </td>
+
                           <td>
                             @if($row->document)
                             <a class="text-primary" download href="{{route('admin.d.f',$row->document)}}">
@@ -52,6 +59,7 @@
                                 <i class="fa fa-trash" ></i>
                             </a>
                           </td>
+
                           </tr>
                     @endforeach
                 </tbody>

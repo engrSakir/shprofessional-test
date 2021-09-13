@@ -18,11 +18,13 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    // $user = new User();
-    // $user->name = 'User Name';
-    // $user->email = 'user@gmail.com';
-    // $user->password = bcrypt('password');
-    // $user->save();
+    if(!User::where('email', 'user@gmail.com')->exists()){
+        $user = new User();
+        $user->name = 'User Name';
+        $user->email = 'user@gmail.com';
+        $user->password = bcrypt('password');
+        $user->save();
+    }   
     return view('welcome');
 });
 
